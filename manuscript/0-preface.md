@@ -1,4 +1,4 @@
-# Intro
+# Preface
 
 > "Software Engineering Is Art Of Compromise" wiki.c2.com
 

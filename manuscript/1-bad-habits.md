@@ -191,7 +191,7 @@ Such parameters almost always violate the Single Responsibility Principle. The *
 
 ## The "Simplicity" of REST
 
-The RESTful approach is very popular. Laravel developers use resource controllers with ready-made methods like **store**, **update**, **delete**, etc., not only for API routes but also for web routes. It looks straightforward. Just four verbs: **GET** (read), **POST** (create), **PUT/PATCH** (update), and **DELETE** (delete).
+The RESTful approach of building an API is very popular. Laravel developers use resource controllers with ready-made methods like **store**, **update**, **delete**, etc., not only for API routes but also for web routes. It looks straightforward. Just four verbs: **GET** (read), **POST** (create), **PUT/PATCH** (update), and **DELETE** (delete).
 
 It works well for projects that involve simple operations on entities—typical CRUD (Create, Read, Update, Delete) applications with forms for creation/editing and entity lists with a "Delete" button. However, when an application becomes more complex, the RESTful approach quickly becomes uncomfortable. For example, I googled the phrase "REST API ban user": the first three results with examples from different API documentation were significantly different.
 
