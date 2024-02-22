@@ -434,7 +434,7 @@ In this book, I will call it the **Application layer**.
 
 What I described here is very similar to the architectural pattern **Hexagonal architecture**, **Onion architecture**, or dozens of similar ones. Unsurprisingly, since they solve exactly the same problems. However, it's much more beneficial for a developer's growth to understand the reasons for separating code into different classes on their own, and to feel which parts of the code can work with the database or web request data. To see how sections of code with similar responsibilities and needs are arranged into something that can be called layers. Having gained such experience and honed their skills, developers can familiarize themselves with these patterns and, possibly, adopt one of them as a standard for a project, fully understanding that this pattern suits the project, not as a microscope used to drive nails or a cannon fired at sparrows.
 
-## Сервисные классы или классы команд?
+## Service classes or command classes?
 
 When an entity is growing, its service class will also become large. Different actions, such as editing or publishing an article, require different dependencies. Everyone needs a database, but some want to send emails, and others wish to upload a file to storage and call some external API. The number of parameters in the service class constructor snowballs, although each may be used in only one or two methods. It quickly becomes clear that the class is doing too many things. Therefore, developers often start creating classes for each action with entities.
 
