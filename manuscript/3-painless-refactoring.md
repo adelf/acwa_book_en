@@ -1,6 +1,6 @@
 # Painless Refactoring
 
-A> A securely fixed patient does not need anesthesia — folk wisdom.
+A> "A securely fixed patient does not need anesthesia" folk wisdom.
 
 ## "Static" Typing
 

@@ -1456,7 +1456,7 @@ class WantsToDispatchJobs(private val dispatcher: Dispatcher) {
 
 The PHP syntax is a barrier to using dependency injection (DI), and I hope it will be mitigated soon through syntax changes or development tools.
 
-When I wrote these lines in early 2019, I didn't anticipate that PHP language developers would be so quick to solve this. In modern PHP, you can write like this:
+When I wrote these lines in early 2019, I didn't expect that PHP language developers would be so quick to solve this. In modern PHP, you can write like this:
 
 ```php
 class WantsToDispatchJobs {
