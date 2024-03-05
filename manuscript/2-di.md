@@ -1,5 +1,7 @@
 # Dependency Injection
 
+A> "Give me a place to stand on, and I will move the Earth"
+
 ## Single Responsibility Principle
 
 You may have heard of the Single Responsibility Principle (SRP). One of its definitions is, "Every module, class, or function should have responsibility over a single part of the functionality." Many developers simplify it to "a class should do one thing," but this definition is inaccurate. "One thing" can be a single line of code or an entire complex task. Drawing the boundaries here can be challenging.

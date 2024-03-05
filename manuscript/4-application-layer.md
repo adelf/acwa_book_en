@@ -1,5 +1,7 @@
 # Application Layer
 
+A> "I'm Winston Wolf, I solve problems."
+
 We continue our example.
 The application is growing, and new fields have been added to the registration form: date of birth and an option for agreeing to receive email newsletters.
 

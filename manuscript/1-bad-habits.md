@@ -1,5 +1,7 @@
 # Bad Habits
 
+A> "Today, smoking is going to save lives"
+
 ## Growth Issues
 
 In this chapter, I will show how projects usually grow and how developers solve the problems that arise. Let's start with a simple example:
