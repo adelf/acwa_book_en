@@ -1,4 +1,4 @@
-# Обработка ошибок
+# Error handling
 
 A> "Pam, everyone deserves a second second chance"
 

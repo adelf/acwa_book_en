@@ -66,6 +66,10 @@ Cohesion refers to the degree to which methods of a class (or parts of other sof
 
 Coupling between two classes (functions, modules) is the degree to which they know about each other. The strong coupling means that some knowledge belongs to multiple parts of the code, and any change can cause a cascade of changes in other parts of the application. By "knowledge" I mean some logic, such as how to save an image or update fields of the User entity. It's the same as responsibility but from a different perspective.
 
+
+![](images/coupling_cohesion.png)
+
+
 The current situation with the **store** method is an excellent example of reducing code quality. It starts implementing multiple responsibilities: cohesion is decreasing. Image uploading is implemented in several places in the application, increasing coupling. It's time to extract image uploading into its own class.
 
 First attempt:
@@ -115,6 +119,10 @@ ImageUploader::upload(...);
 ```
 
 This seems straightforward, but now the **store** method heavily depends on the **ImageUploader** class. Let's imagine that there are many dependent methods in the application, and the team decides to use different storage for images but only in some specific places where they are uploaded. How would developers implement this change? They would create an **AnotherImageUploader** class and replace the calls to the **ImageUploader** class with calls to **AnotherImageUploader** in all the necessary places. In large projects, such changes that affect a large number of classes are highly undesirable as they often lead to errors. Changing how images are stored should not impact the code that works with entities.
+
+
+![](images/hard_dependencies.png)
+
 
 An application with such rigid dependencies looks like a metal grid. It's very difficult to take, for example, the **ImageUploader** class and use it in another application or write unit tests for it.
 
@@ -1504,7 +1512,9 @@ Cache keys are needed in two places: decorator classes for entity retrieval and 
 
 I could use the **CacheKeys** class through DI, but it wouldn't make much sense. All these decorator and listener classes form a structure that can be called a "caching module" for this application. The **CacheKeys** class would be a private part of this module — no other application parts need to know about this class.
 
+
 ![](images/cache_module.png)
+
 
 Using static methods for such internal dependencies that don't interact with the external world (files, databases, APIs) is absolutely normal practice.
 
