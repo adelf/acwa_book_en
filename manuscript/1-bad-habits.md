@@ -248,7 +248,7 @@ function afterUserUpdate(User $user)
 
 This code screams about a problem. The data has somehow changed (most likely through `$user->update($data)`), and here we're trying to understand what exactly happened. Try your best to avoid such situations. You need to treat the cause of the loss of control. If you need to ban a user, an explicit ban command is required—whether it's a method like `UserController::ban`, `$user->ban()`, or a `BanUserCommand` class. Inside it, it will always be clear what is actually happening with the entity. This is important.
 
-## Поклонение темной магии PHP 
+## PHP dark magic 
 
 Sometimes developers don't see (or choose not to) the simple way of implementing something. They write code with reflection, magic methods, or other dynamic features of the PHP language. This code is hard to write and will be much harder to read. I have often fallen into this trap, like every developer, I suppose.
 

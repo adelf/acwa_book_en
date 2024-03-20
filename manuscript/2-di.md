@@ -553,7 +553,7 @@ final class ImageUploader
         $fileContent = $file->getContents();
     
         // Checks using $this->googleVision,
-        // $weakerRules и $fileContent
+        // $weakerRules and $fileContent
         
         if (check failed)
             if (!$dontBan) {
@@ -669,7 +669,7 @@ final class ImageGuard
         bool $weakerRules): bool
     {
         // Checks using $this->googleVision,
-        // $weakerRules и $fileContent
+        // $weakerRules and $fileContent
     }
 }
 ```
