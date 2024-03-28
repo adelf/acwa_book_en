@@ -1,0 +1,13 @@
+0-preface.md
+1-bad-habits.md
+2-di.md
+3-painless-refactoring.md
+4-application-layer.md
+5-error-handling.md
+6-validation.md
+7-events.md
+8-unit-test.md
+9-domain-layer.md
+10-cqrs.md
+11-es.md
+12-end.md
