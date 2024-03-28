@@ -510,7 +510,7 @@ With this configuration, the container will inject an instance of **LoggingQueue
 
 Another advantage of this approach is that the constructors of classes are fully under control. In the inheritance approach, you have to call `parent::__construct` and pass all the necessary parameters, which creates an additional, unnecessary coupling between two classes. The decorator class has no implicit dependencies on the decorated class and allows you to avoid a range of problems in the future.
 
-## Example with Image Uploading
+## Example with image uploading
 
 Let's return to the example of image uploading from the previous chapter. The **ImageUploader** class was extracted from the controller to implement the logic of image uploading. The requirements for this class are:
 
@@ -582,7 +582,7 @@ final class ImageUploader
 }
 ```
 
-### Initial Refactoring
+### Initial refactoring
 
 The simple responsibility of image uploading has grown and now includes several other responsibilities. This class clearly needs refactoring.
 
@@ -743,7 +743,7 @@ Boolean parameters always look ugly and increase the cognitive load when reading
 * The OOP approach.
 * The configuration approach.
 
-### OOP Approach
+### OOP approach
 
 I will use **polymorphism**, so I need to create interfaces.
 
@@ -982,7 +982,7 @@ final class ImageUploader
 
 Yes, the code may not look as clean as in the OOP approach, but its configuration and implementation are straightforward. This approach is definitely more optimal for image uploading, but in other cases with more complex configuration or orchestration, the OOP approach would be preferable.
 
-## Extending Interfaces
+## Extending interfaces
 
 Sometimes we need to extend an interface with an additional method. In the Domain Layer chapter, I will need to dispatch multiple events within each service class. The **Dispatcher** interface in Laravel has only the **dispatch** method, which handles a single event:
 
@@ -1380,7 +1380,7 @@ Explicit configuration, with IDE completions, without cluttering the source clas
 
 Of course, these behaviors exist only in my imagination, and there are likely some issues I don't see, but I like this idea much more than traits.
 
-### Useless Traits
+### Useless traits
 
 Some traits are simply useless. I found one in the Laravel source code:
 
@@ -1489,7 +1489,7 @@ After years of using and not using traits, I can say that developers use them fo
 
 We should treat the disease, not the symptoms, so it's better to find the reasons that lead us to use traits and try to handle them.
 
-## Static Methods
+## Static methods
 
 I mentioned that using static methods creates tight coupling, but sometimes it's acceptable. Here's an example from the previous chapter:
 

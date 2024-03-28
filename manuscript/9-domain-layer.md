@@ -1,6 +1,6 @@
 # Domain Layer
 
-## When and Why?
+## When and why?
 
 Business logic, or Domain logic, represents the logic that application users keep in mind without UI, database, etc. For example, in the case of a game, it would include the complete set of its rules, while for a financial application, it would encompass all entities present and all the rules for calculations. For a blog, the business logic can roughly be described as follows:
 * There are articles, each with a title and text.
@@ -20,7 +20,7 @@ The application logic is marked in black here, while the business logic is white
 
 Extracting business logic into a separate layer is a serious task, especially for an already implemented application that uses Eloquent or other Active Record pattern implementations for database interaction. The connection between objects and the database in these implementations is tight and inseparable. They must be completely detached from the database and implemented as independent entities containing the domain logic. This task can require colossal effort and time, so the decision to create a Domain Layer must be based on serious reasons. I will list some of these reasons, and they should be considered carefully by the project's architect. On the other side of the scale, there should be a heavy weight representing the time, sweat, and blood of developers who will have to rethink much if all the business logic was previously implemented by objects representing database table rows.
 
-### Unit Testing
+### Unit testing
 
 In the previous chapter, we found out that writing unit tests for the application layer is very difficult and not particularly useful. Therefore, for applications with not very complex business logic, such tests are almost never written. Functional tests for these applications are much more important.
 
@@ -68,7 +68,7 @@ class PublishPostTest extends \PHPUnit\Framework\TestCase
 
 These tests require minimal effort. They are easy to write and maintain. Implementing complex entity logic with well-written tests becomes much simpler. The simplicity and ease of such tests result from the **Post** class implementing a single responsibility - the logic of the Post entity. It is not distracted by things like database interaction. The Domain Layer is built from such classes.
 
-### Ease of Code Maintenance
+### Ease of code maintenance
 
 Implementing both business and application logic in one place violates the Single Responsibility Principle. The punishment for this will follow quite swiftly. And, of course, it won't be a single guillotine strike. This skilled executioner will torture slowly. Every movement will cause pain. The amount of duplicated code will grow. Any attempt to extract logic into a method or class will encounter significant resistance. Two logics intertwined into one will always need to be separated from each other before refactoring.
 
@@ -92,7 +92,7 @@ I understand that such a simple example may not prove the importance of combinin
 
 Monopoly is an excellent example of a complex module. Implementing such massive logic in methods of separate service classes would lead to incredible code duplication, and the best way to eliminate this duplication is to concentrate the logic in entities within a single module. This also allows for writing the logic alongside unit tests to check all possible situations.
 
-### Shifting Focus from Database to Domain
+### Shifting focus from database to domain
 
 Complex applications are not merely a layer between the user interface and the database. They contain some logic in between. Single-player games, which are played on a local computer (like a shooter or RPG), do not save their state in a database after every action. Game objects just live in memory, interacting with each other. It only saves its entire state to a file when the player asks to save the game. That's how applications should work! The fact that web applications need to save their state in the database after every updating request is not for convenience. It's a necessary evil.
 
@@ -409,7 +409,7 @@ final class Client
 }
 ```
 
-### Generating Identifiers
+### Generating identifiers
 
 Our code now requires that identifiers be provided to entities from outside, but how should they be generated? An auto-increment column in the database did its job ideally and will be hard to replace. Continuing to use auto-increment values implemented through Redis or Memcached is not the best idea, as it adds a new and quite significant potential point of failure to the application.
 

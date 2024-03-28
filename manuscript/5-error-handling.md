@@ -217,7 +217,7 @@ Even with such a simple example, it's evident that the code of the method **User
 1. **Exception::getMessage()** is not the best message to show for a user. The message "Old password is not valid" is okay, but, for example, "Server Has Gone Away (error 2006)" definitely is not.
 2. Any server errors should be logged. Small applications use log files. When the application becomes popular, exceptions can occur every second. Some exceptions signal problems in the code and should be fixed immediately. Some exceptions are expected: the internet is imperfect, and requests to even the most stable APIs can fail once a million times. However, developers should also react if the frequency of such errors suddenly increases (some external API stopped working). In such cases, when error control requires much attention, it's better to use specialized services that allow grouping exceptions and working with them much more conveniently. If interested, you can google "error monitoring services" and find several such services. Large companies build specialized solutions for recording and analyzing logs from all their servers. Some companies do not log client errors. Some log them but in separate storages. In any case, it's crucial to separate server and client errors for any application.
 
-## Base Exception Class
+## Base exception class
 
 The first step is to create a base class for all business logic exceptions, such as "Old password is not valid". There is a **\DomainException** class in PHP that could be used for this purpose, but it is already used in other places, for example, in third-party libraries, which can lead to confusion. It's easier to create a new class, say, **BusinessException**.
 
@@ -272,7 +272,7 @@ final class UserController
 ```
 This code catches **BusinessException** and displays its message to the user. Other exceptions will show some "Internal error, we are working on it" message and the exception will be sent to the log. The code works correctly, but the **catch** section will be identically repeated in every method of every controller. It makes sense to move the exception-handling logic to a higher level.
 
-## Global Handler
+## Global handler
 
 In Laravel (as in almost all frameworks), there is a global exception handler, and surprisingly, it's very convenient to handle almost all exceptions of our application here. In newer versions of Laravel, it is structured differently. I will look at the **app/Exceptions/Handler.php** class from older versions. The **Handler** class implements two closely related responsibilities: logging exceptions and informing users about them.
 
@@ -347,7 +347,7 @@ final class UserController
 
 Excellent! The business logic has moved from the controller to the service class. Validation is in the Request object. Exception handling is in the global handler. The controller is left to control the process at the highest level. Finally, its work matches its name!
 
-## Checked and Unchecked Exceptions
+## Checked and unchecked exceptions
 
 Close your eyes. I'm now going to talk about lofty matters that will ultimately prove to be useless. Imagine the seashore and the **UserService::changePassword** method.
 What errors might occur there?

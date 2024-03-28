@@ -90,7 +90,7 @@ public function doSomething(Request $request, $id)
 ```
 This method implements at least two responsibilities: the logic for handling HTTP requests/responses and the business logic. Each time developers change the HTTP logic, they are forced to read a lot of business logic code and vice versa. Such code is harder to debug and refactor, so moving the logic into service classes can also be a good idea for this project.
 
-## Passing Request Data
+## Passing request data
 
 Let's start by creating the **UserService** class.
 The first challenge will be passing request data to it.

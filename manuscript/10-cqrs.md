@@ -4,7 +4,7 @@
 
 As we discovered in the previous chapter, getters are unnecessary for implementing a correct domain model. Entities and methods that change their states are quite a sufficient set. However, data needs to be displayed somewhere. Is there no other way than creating getter methods? Let's try to "invent" something, and for that, I need to recall the past.
 
-### Stored Procedures and Views
+### Stored procedures and views
 
 The first project in my professional career was a huge application with logic stored in the database in thousands of stored procedures and views. I wrote a client for all of this in C++. A view in a database is a saved SQL select query that looks like a table. This "table" should only be used for reading.
 

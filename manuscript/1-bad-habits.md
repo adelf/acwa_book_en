@@ -1,8 +1,8 @@
-# Bad Habits
+# Bad habits
 
 A> "Today, smoking is going to save lives"
 
-## Growth Issues
+## Growth issues
 
 In this chapter, I will show how projects usually grow and how developers solve the problems that arise. Let's start with a simple example:
 
@@ -77,7 +77,7 @@ Always name methods, classes, and variables according to their meaning. Sometime
 
 In the case of almost identical **create** and **update** actions, better to leave each one in its method and find common logic inside each. For example, image uploads can be extracted into methods or classes with precise and understandable names. The result will be two methods with meaningful names and readable code, along with the bonus of extracted methods and classes that can likely be used in other application code parts.
 
-## Extraction The Logic
+## Extraction the logic
 
 A new requirement comes to the project: automatically check uploaded images for inappropriate content. Some developers might simply add this code to the **store** method and copy it to the **update** method. More experienced developers would extract this logic into a new controller method and call that method in both places. Even more experienced Laravel developers would find that the image upload code has become quite large and create a separate class, such as **ImageUploader**, which would handle image uploading and content validation.
 
@@ -191,7 +191,7 @@ This is much more readable, but it's just an attempt to hide the real problem. A
 
 Such parameters almost always violate the Single Responsibility Principle. The **ImageUploader** class is now responsible for image uploading and a bunch of other things. It has other issues as well, but we will discuss them later.
 
-## The "Simplicity" of REST
+## The "simplicity" of REST
 
 The RESTful approach of building an API is very popular. Laravel developers use resource controllers with ready-made methods like **store**, **update**, **delete**, etc., not only for API routes but also for web routes. It looks straightforward. Just four verbs: **GET** (read), **POST** (create), **PUT/PATCH** (update), and **DELETE** (delete).
 
@@ -327,7 +327,7 @@ $key = CacheKeys::getUserById($id);
 
 This code transforms strings like "getUserById" into "USER_BY_ID" and uses the value of a constant with that name to form cache keys. Many developers, especially younger ones, love to write such "beautiful" code. Sometimes this code allows saving a few lines of code, sometimes not. However, it will always be extremely difficult to debug and maintain. A developer should think ten times before using such "cool" language features.
 
-## "Rapid" Application Development
+## "Rapid" application development
 
 Some framework developers also enjoy dynamic capabilities and implement similar "magic." It helps to implement simple small projects quickly. Still, by using such magic, developers lose control over the execution of the application code, and as the project grows, this becomes a problem. In the previous example, the use of `*::VERSION` constants was overlooked because using such magic makes it challenging to change the logic.
 
@@ -398,7 +398,7 @@ class UserController
 
 There is no point in "optimizing" this one line of code. In the future, you can explicitly separate the queries when implementing caching. 
 
-## Premature Optimization
+## Premature optimization
 
 Sometimes a developer may have the idea to prepare the code for future changes, for example, by predefining the places where data needs to be cached and separating them into separate classes/methods. They may even implement caching right away, even if the project doesn't require it at the moment. The developer is betting that the project will encounter specific problems and tries to prepare the code in advance. The "problem" could be the project's readiness for heavy loads or certain code changes (the central theme of this book). The bet is the additional time the developer or the whole team will need to invest in implementing this preparation. If the project encounters these problems in the future, the bet will be justified, as fixing the code later would require much more time.
 
@@ -436,7 +436,7 @@ The developer wanted to save a couple of code lines and implemented user blockin
 
 Different methods for blocking and unblocking would be a much more logical solution. More lines of code, but much less ambiguity and other problems.
 
-## Other Sources of Pain
+## Other sources of pain
 
 I forgot to mention the main enemy: Copy-Paste Driven Development.
 

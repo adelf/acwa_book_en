@@ -223,7 +223,7 @@ Another example: one of the values passed to the Application Layer is filled wit
 
 Imagine a DTO for creating a taxi order - **CreateTaxiOrderDto**. Let's say it's an air taxi, so orders can be from one country to another. There will be fields like **fromHouse**, **fromStreet**, **fromCity**, **fromState**, **fromCountry**, **toHouse**, **toStreet**, **toCity**,... A huge DTO with lots of fields, duplicating each other, depending on each other. A house number makes no sense without a street name. A street name is meaningless without a city and country. Validating such data would be complex and regularly duplicated in different DTO objects.
 
-## Value Objects
+## Value objects
 The solution to this problem lies right in the **RegisterUserDto**. We do not store **$birthDay**, **$birthMonth**, and **$birthYear** separately. We do not validate them every time. We just store a **DateTime** object! It always contains the correct date and time. When comparing dates, we never compare their years, months, and days separately. There is a **diff()** method for date comparisons. This class contains all knowledge about dates, saving us from the need to duplicate logic working with them everywhere. It's worth trying to do something similar with other data:
 
 ```php
@@ -310,7 +310,7 @@ final class UserService
 ```
 Value Objects (VOs) like **Email** can be used in Eloquent entities using the casting mechanism. This entails additional costs and necessitates reconsidering whether the project justifies such expenses. For many projects, the concerns described above are not so significant, and it is entirely possible to manage without such code complications. However, there are projects where the cost of an error would be too high, and efforts to protect data integrity would be justified.
 
-## Value Object as a composition of values
+## Value object as a composition of values
 The **Email** and **UserName** value objects are just wrappers for strings, but the **Value Object** pattern is a wider concept. A geographic coordinate can be described by two float values: longitude and latitude. Longitude is usually meaningless without knowing the latitude. By creating a **GeoPoint** object, developers can work with it throughout the application.
 
 ```php
@@ -354,7 +354,7 @@ Other examples of value objects:
 
 Have you noticed that in the previous example, I tried not to use primitive types, such as strings and numbers? The **getDistance()** method returns a **Distance** object, not an int or float. The **Distance** class could have methods like **getMeters()**: float or **getMiles()**: float, as well as **Distance::isEqual**(**Distance** **$other**) for comparing two distances. It is also a value object! For many projects, such detail is excessive, and a **GeoPoint::getDistance()** method that returns the floating-point number of the distance in meters is more than sufficient. I just wanted to show an example of what I call "object thinking".
 
-## Value Objects and validation
+## Value objects and validation
 
 ```php
 final class UserController extends Controller

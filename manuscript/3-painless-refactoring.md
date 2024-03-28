@@ -1,8 +1,8 @@
-# Painless Refactoring
+# Painless refactoring
 
 A> "A securely fixed patient does not need anesthesia"
 
-## "Static" Typing
+## "Static" typing
 
 Small and large software projects differ in many aspects, including their work style. In small projects, most time is spent on actual coding - building the codebase. In large projects, however, it involves navigating through this codebase: moving from one class to another, from a method call to its implementation, from method code to its calls (Find Usages). Sometimes, more than 95% of the time is spent on precisely this code maze wandering.
 
@@ -142,7 +142,7 @@ It would be desirable to describe the template parameters like typical function 
 
 I understand that many people might consider this excessive and a waste of time, but after all the efforts put into static "typing," my code becomes much more flexible. I can easily find all the usages of fields and methods and rename everything automatically. Each refactoring causes minimal pain.
 
-## Model Fields
+## Model fields
 Using magic methods like **__get**, **__set**, **__call**, and others is tempting but dangerous. It won't be easy to find such magic calls. If you use them, it's better to provide these classes with the necessary phpDoc comments. Here's an example with a small Eloquent model:
 
 ```php
