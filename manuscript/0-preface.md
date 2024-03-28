@@ -42,9 +42,3 @@ Balancing patterns, practices, techniques, technologies and choosing the most su
 
 In this book, I will show the most common problems that arise during the growth of a project and how developers usually solve them.
 The reasons behind these solutions are an important part of the book.
-
-I must warn you:
-
-* This book is not for beginners. To understand the described problems, you should have participated in at least one project, alone or in a team.
-* This book is not a manual. Many patterns will be described superficially, just to familiarize the reader with them. Some useful references await you at the end of the book.
-* The examples in this book will never be perfect. I may call some code "correct" and find errors in it in the next chapter.

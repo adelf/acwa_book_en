@@ -1,6 +1,8 @@
 # Events
 
-The action of the Application Layer always contains a main part where the core logic of the action is performed, as well as some additional actions. User registration consists of the actual creation of a user entity and the sending of a corresponding letter. Updating the text of an article involves updating the **$post->text** value with the entity's persisting to the database, as well as, for example, a **Cache::forget** call to invalidate the cache. Here is a pseudo-real example: a survey website. Creating a survey entity:
+A> "Never do today what can be done tomorrow"
+
+An Application Layer's action always contains a main part where the core logic of the action is performed, as well as some additional actions. User registration consists of the actual creation of a user entity and the sending of a corresponding letter. Updating the text of an article involves updating the **$post->text** value with the entity's persisting to the database, as well as, for example, a **Cache::forget** call to invalidate the cache. Here is a pseudo-real example: a survey website. Creating a survey entity:
 
 ```php
 final class SurveyService

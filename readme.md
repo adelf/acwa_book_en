@@ -7,7 +7,7 @@ Adel Faizrakhmanov, **Laravel Idea** plugin for **PhpStorm** creator. Twitter: [
 0. [Preface](manuscript/0-preface.md)
 1. [Bad habits](manuscript/1-bad-habits.md)
 2. [Dependency injection](manuscript/2-di.md)
-3. [Painless Refactoring](manuscript/3-painless-refactoring.md)
+3. [Painless refactoring](manuscript/3-painless-refactoring.md)
 4. [Application Layer](manuscript/4-application-layer.md)
 5. [Error handling](manuscript/5-error-handling.md)
 6. [Validation](manuscript/6-validation.md)
