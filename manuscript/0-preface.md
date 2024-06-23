@@ -1,6 +1,6 @@
 # Preface
 
-> "Software Engineering Is Art Of Compromise" wiki.c2.com
+A> "Software Engineering Is Art Of Compromise" wiki.c2.com
 
 I have seen many projects that grew out of a simple "MVC" structure.
 Developers often explain the MVC pattern: "View is HTML templates, Model is an Active Record class (like Eloquent), and one controller to rule them all!"
