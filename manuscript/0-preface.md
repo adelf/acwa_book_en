@@ -40,5 +40,5 @@ Almost every decision about refactoring or applying a certain pattern presents t
 Sometimes, the decision not to apply a pattern that would make the code "better" is correct because the beneficial effect of the pattern is less than the time spent implementing it.
 Balancing patterns, practices, techniques, technologies and choosing the most suitable combination for a specific project is the most important skill for a developer/architect.
 
-In this book, I will show the most common problems that arise during the growth of a project and how developers usually solve them.
+In this book, I will show the most common problems that appear during the growth of a project and how developers usually solve them.
 The reasons behind these solutions are an important part of the book.

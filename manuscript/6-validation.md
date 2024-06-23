@@ -49,6 +49,7 @@ $this->validate($request, [
     'body' => 'required',
 ]);
 ```
+
 A check for the deletion mark was added. Many such corrections may be needed since articles are not only created. Any other change can again break our "smart" validation. For example, the "archived" mark for categories which will allow them to remain on the site but not allow adding new articles to them. We didn't make any changes to the article addition form and, in general, to the entire HTTP part of the application. Changes were related to business logic (archival categories) or data storage logic (soft delete). However, it is the HTTP request classes with their validation that need to be changed. This is another example of high coupling. Not long ago, we moved all database work to the Application Layer. However, out of old habits, we still go directly to the database from validation classes, ignoring all abstractions built using Eloquent or the Application Layer.
 
 
