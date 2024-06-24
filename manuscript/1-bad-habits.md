@@ -227,7 +227,8 @@ params:
 IsBanned=true
 ```
 
-<img src="images/typical_product.png" align="right" style="float:right; margin: 20px 0 20px 20px;"/>
+{float=right,style=float:right; margin: 20px 0 20px 20px;}
+![](images/typical_product.png)
 
 I often recall the image of the "typical Apple product, typical Google product" as the best illustration of the problem. The problem is that developers, knowing that the result will eventually be a simple UPDATE SQL query to the table corresponding to the model, start implementing all these changes through that model's **update** method. In the image, we see the extreme manifestation of this habit, which has significantly impacted the user interface.
 
