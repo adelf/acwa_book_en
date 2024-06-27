@@ -4,6 +4,12 @@ Adel Faizrakhmanov, **Laravel Idea** plugin for **PhpStorm** creator. Twitter: [
 
 [Laravel Idea](https://laravel-idea.com/?utm_medium=book&utm_source=book_architecture&utm_campaign=link_in_en_description) and PhpStorm — the most productive Laravel development environment.
 
+Free on Leanpub: [https://leanpub.com/acwa_en_se/](https://leanpub.com/acwa_en_se/)
+
+eBook and paperback versions on [Amazon](amazon.md) - it's impossible to make it free on Amazon, so minimum possible price there.
+
+It's also available to read on GitHub:
+
 0. [Preface](manuscript/0-preface.md)
 1. [Bad habits](manuscript/1-bad-habits.md)
 2. [Dependency injection](manuscript/2-di.md)
